@@ -39,7 +39,7 @@ class Ekspedisi extends ResourcePresenter
 
     /**
      * Present a view to present a new single resource object
-     *
+     *d
      * @return mixed
      */
     public function new()

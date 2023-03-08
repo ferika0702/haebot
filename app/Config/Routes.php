@@ -110,6 +110,17 @@ $routes->group('', ['filter' => 'isLoggedIn'], function ($routes) {
     $routes->post('check_list_produk', 'Pemesanan_detail::check_list_produk', ['filter' => 'permission:Pembelian']);
     $routes->post('create_list_produk', 'Pemesanan_detail::create', ['filter' => 'permission:Pembelian']);
     $routes->resource('pemesanan_detail', ['filter' => 'permission:Pembelian']);
+
+    // Karyawan
+    $routes->get('karyawan','Karyawan::index',['filter'=>'permission:Data Master']);
+    $routes->get('karyawan/(:num)', 'Karyawan::show/$1', ['filter' => 'permission:Data Master']);
+    $routes->put('karyawan/(:num)','Karyawan::edit/$1',['filter'=>'permission:Data Master']);
+    $routes->get('karyawan/new','Karyawan::new',['filter'=>'permission:Data Master']);
+    $routes->post('karyawan/(:num)','Karyawan::update/$1',['filter'=>'permission:Data Master']);
+    $routes->post('karyawan/create','Karyawan::create',['filter'=>'permission:Data Master']);
+    $routes->delete('karyawan/(:num)','Karyawan::delete/$1',['filter'=>'permission:Data Master']);
+    $routes->resource('karyawan', ['filter' => 'permission:Data Master']);
+
 });
 
 /*

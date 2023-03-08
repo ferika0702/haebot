@@ -58,7 +58,8 @@ class Produk extends ResourcePresenter
             $modelProduk = new ProdukModel();
             $modelProdukPlan = new ProdukPlanModel();
 
-            $produk = $modelProduk->getProduk($id);
+            $produk = $modelProduk->
+            duk($id);
 
             if ($produk['tipe'] == 'SET' || $produk['tipe'] == 'SINGLE') {
 
